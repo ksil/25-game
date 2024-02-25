@@ -151,9 +151,9 @@ int main(int argc, const char* argv[])
         // permutations of numbers
         do {
             // permuatations for all operators with replacement
-            for (auto multi_op = MultiInd<4, 4>(); multi_op.valid(); ++multi_op)
+            for (auto multi_op = MultiInd<k_ops.size(), k_choose - 1>(); multi_op.valid(); ++multi_op)
             {
-                auto ops = multi_op.extract<const Operator, 4>(k_ops);
+                auto ops = multi_op.extract<const Operator, k_choose - 1>(k_ops);
 
                 for (const auto &tree: trees)
                 {
